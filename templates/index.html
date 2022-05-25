@@ -1,0 +1,143 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Join the monKeys!
+    </title>
+    <!-- HTML5 Shim and Respond.js IE10 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 10]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+
+    
+    <meta name="description" content="Grab a invite to the cryptomonKeys Discord" />
+    <meta name="keywords" content="NFT,WAX,cryptomonkeys,connect,Discord,Twitter,telegram"/>
+    <meta name="author" content="Green"/>
+    
+    
+    <meta name="twitter:card" value="summary" />
+    <meta name="twitter:url" value="https://chat.cryptomonkeys.cc/" />
+    <meta name="twitter:title" value="Join the cryptomonKeys today!" />
+    <meta name="twitter:description" value="cryptomonKeys is a freely distributed, meme-rich, NFT-based trading card series, here to disrupt the meme economy." />
+    <meta name="twitter:image" value="https://cdn.discordapp.com/attachments/834806287980167208/877193757257240596/baem.png" />
+    <meta name="twitter:site" value="@Crypt0monKeys" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chat.cryptomonkeys.cc/" />
+    <meta content="Join the cryptomonKeys today!" property="og:title">
+    <meta content="cryptomonKeys is a freely distributed, meme-rich, NFT-based trading card series, here to disrupt the meme economy." property="og:description">
+    <meta content="You've been invited to join cryptomonKeys" property="og:site_name">
+    <meta content='https://cdn.discordapp.com/attachments/834806287980167208/877193757257240596/baem.png' property='og:image'>
+    <meta name="theme-color" content="#FCDD11">
+    
+    <link rel="icon" href="{{ url_for('static',filename='images/favicon.ico') }}" type="image/x-icon">
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/fontawesome-all.min.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+    
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+
+<body> 
+  <div class="wrapper">
+    <div class="content" >
+      <div class="card" >
+        <div class="card-body text-center" style="border-radius: 25px; background-color: rgb(252,221,17);">
+          <div class="mb-4">
+            <img style="max-width: 60px" src="{{ url_for('static',filename='images/image0.png') }}"></img>
+          </div>
+          <div id="sectionswrapper">                
+            <h5 class="mb-4" style="color: black;">
+                Please verify that you're a kind monKey
+              </h5>
+              <br>
+              <div class="mb-4">
+                <form method="POST" action="{{ url_for('grab_invite') }}">
+                  {{ form.csrf_token }}
+                  <p>
+                      {% for error in form.recaptcha.errors %}
+                          {{ error }}
+                      {% endfor %}
+                      {{ form.recaptcha }}
+                  </p>
+                  <br>
+                  <br>
+                  <div class="control-group" style="margin-right: 12%;">
+                      <div class="controls">
+                          <input type="submit" class="btn btn-large btn-primary"  style="background-color: rgb(3, 156, 3);" name="allow" value="Get Invite"/>
+                      </div>
+                  </div>
+              </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="text-center text-white"> 
+    <!-- Grid container -->
+    <div class="container p-2 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-0">  
+        <!-- Twitter -->
+        <a
+          class="btn btn-primary btn-floating m-2"
+          style="background-color: #55acee;"
+          href="https://twitter.com/crypt0monkeys/"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn btn-primary btn-floating m-2"
+          style="background-color: #ac2bac;"
+          href="https://www.instagram.com/crypt0monkeys/"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Discord -->
+        <a
+          class="btn btn-primary btn-floating m-2"
+          style="background-color: #7289da;"
+          href="https://chat.cryptomonkeys.cc"
+          role="button"
+          ><i class="fab fa-discord"></i
+        ></a>
+        <!-- Telegram -->
+        <a
+          class="btn btn-primary btn-floating m-2"
+          style="background-color: #0088CC;"
+          href="https://t.me/crypt0monKeys"
+          role="button"
+          ><i class="fab fa-telegram"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3 mb-2" style="margin-left: 20px; margin-right: 20px; background-color: rgba(0, 0, 0, 0.2);">
+      Copyright © 2022 <a class="text-white" href="https://cryptomonkeys.cc/"> CryptomonKeys</a> and Green
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <script src="{{ url_for('static',filename='styles/bootstrap.min.js') }}"></script>
+    
+</body>
+</html>
+
+
+    
